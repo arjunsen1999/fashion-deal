@@ -8,5 +8,7 @@ const Connection = () =>{
   })
 }
 
+mongoose.set('strictQuery', false);
+
 
 module.exports = {Connection};
