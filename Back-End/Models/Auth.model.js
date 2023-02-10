@@ -34,7 +34,7 @@ const authSchema = mongoose.Schema({
     type : Boolean,
     default : false
  }
-}, {versionkey : false, timestamps : true});
+}, {versionKey : false, timestamps : true});
 
 
 const authModel = mongoose.model("Auth", authSchema);
