@@ -1,7 +1,11 @@
-
+// path (http://localhost:8080/auth/register)
 
 const registerController = async (req, res) =>{
-  res.send("<h1>Hello</h1>")
+  try {
+    
+  } catch (error) {
+    
+  }
 }
 
 module.exports = {registerController}
