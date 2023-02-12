@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT;
 const cors = require('cors');
+
 // Connection to the db import
 const {Connection} = require("./Config/db");
 
@@ -12,6 +13,7 @@ const {authRouter} = require("./Routes/Auth.route");
 // Globel Middleware
 app.use(express.json());
 app.use(cors());
+
 
 // For Testing
 app.get("/", (req, res) =>{
