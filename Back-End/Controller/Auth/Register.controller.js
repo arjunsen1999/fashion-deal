@@ -5,6 +5,7 @@ const { validationResult } = require('express-validator');
 const {authModel} = require("../../Models/Auth.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
+const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail")
 
 const registerController = async (req, res) =>{
   try {
@@ -24,6 +25,9 @@ const registerController = async (req, res) =>{
 
    // Make password hash
    let hashPassword = await bcrypt.hash(password, saltRounds);
+
+   // Send Verify Mail
+   sendMailer(email)
 
    // create user
    await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
