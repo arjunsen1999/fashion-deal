@@ -26,15 +26,16 @@ const registerController = async (req, res) =>{
    // Make password hash
    let hashPassword = await bcrypt.hash(password, saltRounds);
 
-   // Send Verify Mail
-   sendMailer(email)
-
    // create user
-   await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
-   res.send({msg : "Register Successfully!"});
+   let auth = await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
+   
+   // Send Verify Mail
+  //  sendMailer(email)
+
+      res.send(auth)
 
   } catch (error) {
-    return res.status(400).send({msg : "Somthing Went Wrong in Register"})
+    return res.status(500).send({msg : "Somthing Went Wrong in Register"})
   }
 }
 

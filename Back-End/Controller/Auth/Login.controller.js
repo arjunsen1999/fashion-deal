@@ -46,7 +46,7 @@ const loginController = async (req, res) =>{
 
 
  } catch (error) {
-    return res.status(400).send({msg : "Somthing Went Wrong in Login"})
+    return res.status(500).send({msg : "Somthing Went Wrong in Login"})
  }
 }
 
