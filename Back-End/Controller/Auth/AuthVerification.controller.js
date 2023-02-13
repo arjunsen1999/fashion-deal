@@ -1,3 +1,4 @@
+// path (http://localhost:8080/auth/:authId/verify/:token)
 
 const {tokenModel} = require("../../Models/Token.model");
 const {authModel} = require("../../Models/Auth.model");
