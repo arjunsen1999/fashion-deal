@@ -5,7 +5,8 @@ const { validationResult } = require('express-validator');
 const {authModel} = require("../../Models/Auth.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
-const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail")
+const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail");
+const crypto = require("crypto")
 
 const registerController = async (req, res) =>{
   try {
@@ -25,6 +26,12 @@ const registerController = async (req, res) =>{
 
    // Make password hash
    let hashPassword = await bcrypt.hash(password, saltRounds);
+
+   let token = {
+    token : crypto.randomBytes(32).toString('hex')
+   }
+
+   res.send(token)
 
    // create user
    let auth = await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
