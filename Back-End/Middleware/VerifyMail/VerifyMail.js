@@ -11,13 +11,13 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function sendMailer(to, msg){
+async function sendMailer(to, url){
     let info = await transporter.sendMail({
         from: '"arjunsen", <fashion@deal.com>', // sender address
         to: to, // list of receivers
         subject: "Hello ✔", // Subject line
-        text: "Hello Everyone", // plain text body
-        // html: "<b>Hello Arjun</b>", // html body
+        // text: "Hello Everyone", // plain text body
+        html: `<a>${url}</a>`, // html body
       });
 }
 

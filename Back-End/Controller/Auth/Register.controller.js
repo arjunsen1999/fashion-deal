@@ -6,7 +6,8 @@ const {authModel} = require("../../Models/Auth.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail");
-const crypto = require("crypto")
+const crypto = require("crypto");
+const {tokenModel} = require("../../Models/Token.model")
 
 const registerController = async (req, res) =>{
   try {
@@ -27,19 +28,20 @@ const registerController = async (req, res) =>{
    // Make password hash
    let hashPassword = await bcrypt.hash(password, saltRounds);
 
-   let token = {
-    token : crypto.randomBytes(32).toString('hex')
-   }
-
-   res.send(token)
-
    // create user
    let auth = await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
    
-   // Send Verify Mail
-  //  sendMailer(email)
+   // create token to verify
+   let token = await tokenModel.create({
+    authId : auth._id,
+    token : crypto.randomBytes(32).toString('hex')
+   });
 
-      res.send(auth)
+   let url = `${process.env.BASE_URL}/auth/${token.authId}/verify/${token.token}`
+  
+   sendMailer(email, url)
+
+    res.send({msg : "An email send to your account please verify!"})
 
   } catch (error) {
     return res.status(500).send({msg : "Somthing Went Wrong in Register"})
