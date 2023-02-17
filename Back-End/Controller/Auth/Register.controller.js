@@ -7,7 +7,8 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const {sendMailer} = require("../../asset/VerifyMail/VerifyMail");
 const crypto = require("crypto");
-const {tokenModel} = require("../../Models/Token.model")
+const {tokenModel} = require("../../Models/Token.model");
+const {EmailTemplate} = require("../../asset/EmailTemplate/EmailTemplate")
 
 const registerController = async (req, res) =>{
   try {
@@ -38,8 +39,8 @@ const registerController = async (req, res) =>{
    });
 
    let url = `${process.env.BASE_URL}/auth/${token.authId}/verify/${token.token}`
-  
-   sendMailer(email, url)
+   let html = EmailTemplate(url);
+   sendMailer(email, url, html)
 
     res.send({msg : "An email send to your account please verify!"})
 

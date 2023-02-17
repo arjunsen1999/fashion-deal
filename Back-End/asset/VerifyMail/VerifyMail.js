@@ -11,13 +11,13 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function sendMailer(to, url){
+async function sendMailer(to, url, html){
     let info = await transporter.sendMail({
         from: '"arjunsen", <fashion@deal.com>', // sender address
         to: to, // list of receivers
-        subject: "Please verify ✔", // Subject line
+        subject: "Email Verification ✔", // Subject line
         // text: "Hello Everyone", // plain text body
-        html: `<a target="_blank" href='${url}'>${url}</a>`, // html body
+        html // html body
       });
 }
 
