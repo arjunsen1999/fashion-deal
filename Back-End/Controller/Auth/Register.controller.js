@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 const {authModel} = require("../../Models/Auth.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
-const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail");
+const {sendMailer} = require("../../asset/VerifyMail/VerifyMail");
 const crypto = require("crypto");
 const {tokenModel} = require("../../Models/Token.model")
 

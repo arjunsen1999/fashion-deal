@@ -11,7 +11,7 @@ const AuthVerification = async (req, res) =>{
             token
         });
         if(!isToken){
-            return res.status(404).send("<h1>404</h1>")
+            return res.render("error")
         }
 
         await authModel.updateOne({_id : authId}, {isActive : true});
@@ -21,7 +21,7 @@ const AuthVerification = async (req, res) =>{
         res.render("index")
 
     } catch (error) {
-        return res.status(500).send({msg : "Somthing Went Wrong in Auth Verification", error})
+        return res.render("error");
     }
 }
 

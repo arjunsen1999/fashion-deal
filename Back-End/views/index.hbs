@@ -4,15 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verify</title>
     <link rel="stylesheet" href="./style/index.css">
     <style>
-        .heading{
-            color: red;
-        }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+
+      body{
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(248, 238, 239);
+      }
+      .container{
+      width: 400px;
+      min-height: 200px;
+      }
+      .img-div{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .img-div > img{
+        width: 100%;
+      }
+      .btn-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn-div > a > button{
+        padding: 12px 40px;
+        border-radius: 12px;
+        background-color: #25D266 ;
+        color: white;
+        font-size: 20px;
+        border: none;
+        outline: 0;
+        cursor: pointer;
+      }
+
+      .btn-div > a > button:hover{
+        background-color: #20c45f;
+      }
+      .btn-div > a > button:active{
+        transform: scale(.98);
+      }
+     
     </style>
 </head>
 <body>
-    <h1 class="heading">Hello From other side</h1>
+    
+
+    <div class="container">
+        
+      <div class="img-div">
+        <img src="https://freepngimg.com/save/108302-badge-whatsapp-verified-png-download-free/300x229" alt="verify img">
+      </div>
+
+      <div class="btn-div">
+        <a href=""><button>Open</button></a>
+      </div>
+
+    </div>
+
 </body>
 </html>
