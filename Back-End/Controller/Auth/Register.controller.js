@@ -5,7 +5,10 @@ const { validationResult } = require('express-validator');
 const {authModel} = require("../../Models/Auth.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
-const {sendMailer} = require("../../Middleware/VerifyMail/VerifyMail")
+const {sendMailer} = require("../../asset/VerifyMail/VerifyMail");
+const crypto = require("crypto");
+const {tokenModel} = require("../../Models/Token.model");
+const {EmailTemplate} = require("../../asset/EmailTemplate/EmailTemplate")
 
 const registerController = async (req, res) =>{
   try {
@@ -26,15 +29,23 @@ const registerController = async (req, res) =>{
    // Make password hash
    let hashPassword = await bcrypt.hash(password, saltRounds);
 
-   // Send Verify Mail
-   sendMailer(email)
-
    // create user
-   await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
-   res.send({msg : "Register Successfully!"});
+   let auth = await authModel.create({email, password : hashPassword, fname, lname, img, isSeller, isAdmin});
+   
+   // create token to verify
+   let token = await tokenModel.create({
+    authId : auth._id,
+    token : crypto.randomBytes(32).toString('hex')
+   });
+
+   let url = `${process.env.BASE_URL}/auth/${token.authId}/verify/${token.token}`
+   let html = EmailTemplate(url);
+   sendMailer(email, url, html)
+
+    res.send({msg : "An email send to your account please verify!"})
 
   } catch (error) {
-    return res.status(400).send({msg : "Somthing Went Wrong in Register"})
+    return res.status(500).send({msg : "Somthing Went Wrong in Register"})
   }
 }
 

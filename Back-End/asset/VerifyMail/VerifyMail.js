@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
-let userName_email = "arjunsen717@gmail.com";
-let emailpassword = "grtkfxczybqnnhuu";
+let userName_email = "fashion.deal.query@gmail.com";
+let emailpassword = "zqmxnvvcqcbwezvl";
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -11,13 +11,13 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-async function sendMailer(to, msg){
+async function sendMailer(to, url, html){
     let info = await transporter.sendMail({
         from: '"arjunsen", <fashion@deal.com>', // sender address
         to: to, // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello Everyone", // plain text body
-        // html: "<b>Hello Arjun</b>", // html body
+        subject: "Email Verification ✔", // Subject line
+        // text: "Hello Everyone", // plain text body
+        html // html body
       });
 }
 
