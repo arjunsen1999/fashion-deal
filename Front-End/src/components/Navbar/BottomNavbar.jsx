@@ -5,9 +5,10 @@ import Style from "../../styles/components/Navbar/BottomNavbar.module.css"
 import { WomenEthnic, WomenWestern, Men, Kids, HomeKitchen, BeautyHealth, JewelleryAccessories, BagsFootwear, Electronics } from "./BottomNavbarData";
 
 export default function BottomNavbar() {
+  const sm = "320px";
   return (
     <>
-      <Box borderBottom={"0.2px solid gray"} px="40px">
+      <Box borderBottom={"0.2px solid gray"} px="40px" display={{base : "none", xl : "block"}}>
         <Box
           h="100%"
           display={"flex"}
