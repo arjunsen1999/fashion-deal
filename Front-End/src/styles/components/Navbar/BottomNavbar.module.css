@@ -1,0 +1,26 @@
+
+.bottomSectionMenu{
+    position: absolute;
+    width: 100%;
+    padding: 0px 20px;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    box-shadow: 1px 1px 5px rgb(195, 195, 195);
+    display: none;
+    z-index: 10;
+}
+
+.bottomSection:hover > .bottomSectionMenu{
+    display: block;
+}
+
+.dropMenuSection > div{
+    padding: 20px;
+    align-self: stretch;
+}
+
+.dropMenuSection > div:nth-child(even){
+ background-color: rgb(245, 245, 245);
+
+}
