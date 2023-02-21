@@ -14,16 +14,20 @@ import { BiSearchAlt } from "react-icons/bi";
 import { FaUserAlt, FaMobileAlt } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import {GoLock} from "react-icons/go"
+import { GoLock } from "react-icons/go";
 
 export default function TopNavbar() {
   return (
-    <Box px="40px" borderBottom={"0.2px solid gray"}>
+    <Box px={{ md: "40px", base: "10px" }} borderBottom={"0.2px solid gray"}>
       <Box
         w="100%"
         minH="50px"
         display={"grid"}
-        gridTemplateColumns="1fr 1fr"
+        gridTemplateColumns={{
+          lg: "1fr 1fr",
+          md: "2.5fr 1fr",
+          base: "5fr 0.6fr",
+        }}
         gap="50px"
       >
         {/* Logo and Search */}
@@ -33,7 +37,7 @@ export default function TopNavbar() {
           alignItems="center"
           justifyContent={"flex-start"}
         >
-          <Box h="100%" mr="30px" w="30%" py="10px">
+          <Box h="100%" mr="30px" w={{md : "30%", base : "20%"}} py="10px">
             {/* <Image src="./asset/FashionDealLogo.png" alt="Logo" h="100%" w="100px"/> */}
             <Text>Logo</Text>
           </Box>
@@ -64,8 +68,16 @@ export default function TopNavbar() {
         </Box>
 
         {/* User, login, signup section */}
-        <Box h="100%" display={"grid"} gridTemplateColumns="1fr 1fr 1fr">
-          <Box px="20px" borderRight={"0.3px solid gray"}>
+        <Box
+          h="100%"
+          display={"grid"}
+          gridTemplateColumns={{ xl: "1fr 1fr 1fr", lg: "2fr 1fr", base: "1fr" }}
+        >
+          <Box
+            px="20px"
+            borderRight={"0.3px solid gray"}
+            display={{ xl: "block", base: "none" }}
+          >
             <Box
               h="100%"
               display={"flex"}
@@ -77,12 +89,12 @@ export default function TopNavbar() {
               <Box>
                 <FaMobileAlt fontSize={"18px"} mr="20px" />
               </Box>
-              <Text fontSize={"20px"} fontWeight="500">
+              <Text fontSize={"18px"} fontWeight="500">
                 Download App
               </Text>
               {/* //////////////// */}
               <Box className={Style.downloadAppInnerMenu}>
-                <Heading fontSize={"20px"} mb="20px">
+                <Heading fontSize={"18px"} mb="20px">
                   Download From a
                 </Heading>
                 <Link to="">
@@ -99,7 +111,11 @@ export default function TopNavbar() {
               {/* /////////////////////// */}
             </Box>
           </Box>
-          <Box px="20px" borderRight={"0.3px solid gray"}>
+          <Box
+            px="20px"
+            borderRight={"0.3px solid gray"}
+            display={{ lg: "block", base: "none" }}
+          >
             <Box
               h="100%"
               display={"flex"}
@@ -107,25 +123,28 @@ export default function TopNavbar() {
               justifyContent={"center"}
               cursor="pointer"
             >
-              <Text fontSize={"20px"} fontWeight="500">
+              <Text fontSize={"18px"} fontWeight="500">
                 Become a Supplier
               </Text>
             </Box>
           </Box>
-          <Box px="20px" position={"relative"}>
+          <Box px={{md : "20px", base : "0px"}} position={"relative"}>
             <Box
               h="100%"
               display={"grid"}
-              gridTemplateColumns="1fr 1fr"
-              gap="20px"
+              gridTemplateColumns={{ md: "1fr 1fr", base : "1fr" }}
+              gap={{md :"20px", sm : "0px"}}
+              gridColumnStart = {{md : "auto", base : -1}}
             >
               <Box
                 cursor="pointer"
                 display={"flex"}
-                alignItems="center"
+                alignItems={"center"}
                 justifyContent={"center"}
                 flexDirection="column"
+            
                 className={Style.profile}
+                w={{md : "100%", base:"50%"}}
               >
                 <Box>
                   <FaUserAlt fontSize={"20px"} />
@@ -134,7 +153,7 @@ export default function TopNavbar() {
                   Profile
                 </Text>
                 {/* /////////////////// */}
-                <Box className={Style.profileMenu}>
+                <Box className={Style.profileMenu} w={{base : "200px", md : "110%"}}>
                   <Heading fontSize={"20px"} mb="8px">
                     Hello User
                   </Heading>
@@ -153,16 +172,26 @@ export default function TopNavbar() {
                       Sign Up
                     </Button>
                   </Link>
-                  <Box pt="20px" display={"flex"} alignItems="center" justifyContent={"flex-start"} borderTop=".2px solid gray">
-                  <Box mr="20px"><GoLock fontSize={"18px"}/></Box>
-                  <Text fontSize={"20px"} fontWeight="500">My Orders</Text>
+                  <Box
+                    pt="20px"
+                    display={"flex"}
+                    alignItems="center"
+                    justifyContent={"flex-start"}
+                    borderTop=".2px solid gray"
+                  >
+                    <Box mr="20px">
+                      <GoLock fontSize={"18px"} />
+                    </Box>
+                    <Text fontSize={"20px"} fontWeight="500">
+                      My Orders
+                    </Text>
                   </Box>
                 </Box>
                 {/* ////////////// */}
               </Box>
               <Box
                 cursor="pointer"
-                display={"flex"}
+                display={{ md: "flex", base: "none" }}
                 flexDirection="column"
                 alignItems="center"
                 justifyContent={"center"}

@@ -17,12 +17,13 @@
     display: block;
 }
 
+
 .profileMenu{
     position: absolute;
     right: 0;
     top: 100%;
     background-color: white;
-    width: 100%;
+    width: 110%;
     padding: 20px;
     box-shadow: 1px 1px 5px rgb(195, 195, 195);
     display: none;
@@ -32,3 +33,4 @@
 .profile:hover > .profileMenu{
     display: block;
 }
+
