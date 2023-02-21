@@ -1,0 +1,34 @@
+.downloadApp{
+    position: relative;
+}
+
+.downloadAppInnerMenu{
+ position: absolute;
+ width: 120%;
+ padding: 20px;
+ background-color: white;
+ top:100%;
+ display: none;
+ box-shadow: 1px 1px 5px rgb(195, 195, 195);
+ z-index: 10;
+}
+
+.downloadApp:hover > .downloadAppInnerMenu{
+    display: block;
+}
+
+.profileMenu{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 5px rgb(195, 195, 195);
+    display: none;
+    z-index: 10;
+}
+
+.profile:hover > .profileMenu{
+    display: block;
+}
