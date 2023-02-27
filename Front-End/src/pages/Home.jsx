@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar/Navbar";
 export default function Home() {
   return (
     <>
-      <Box w="100%" minHeight={"100vh"} display="flex" flexDirection={"column"}>
+      <Box w="100%" minHeight={"120vh"} display="flex" flexDirection={"column"}>
         <Navbar />
 
         <Heading>Home Page</Heading>
