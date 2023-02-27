@@ -160,11 +160,11 @@ export default function TopNavbar() {
                   <Text fontSize={"12px"} mb="20px">
                     To access your Meesho account
                   </Text>
-                  <Link to="">
+                  <Link to="/userSignup">
                     {" "}
                     <Button
                       mb="20px"
-                      bg="#008060"
+                      bg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
                       color={"white"}
                       size="lg"
                       w="100%"

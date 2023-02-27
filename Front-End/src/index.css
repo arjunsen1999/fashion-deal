@@ -3,6 +3,7 @@
   --softGreen : #008060; /* for all button */
   --white : white; /* for button, text, etc */
   --background : rgb(245, 245, 245); /* for initial background color */
+  --text-color : #A0AEC0;
 }
 
 * {
