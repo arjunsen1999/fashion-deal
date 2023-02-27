@@ -20,6 +20,7 @@ import {
   } from '@chakra-ui/react';
   import { SmallCloseIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import {FcGoogle} from "react-icons/fc"
+  import {Link} from "react-router-dom"
 
 export default function SignupCards() {
     const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +46,7 @@ export default function SignupCards() {
           {/* <FormLabel>User Icon</FormLabel> */}
           <Stack direction={['column', 'row']} spacing={6}>
             <Center>
-              <Avatar size="xl" src="https://bit.ly/sage-adebayo">
+              <Avatar size="xl" src="https://bit.ly/broken-link">
                 <AvatarBadge
                   as={IconButton}
                   size="sm"
@@ -116,6 +117,11 @@ export default function SignupCards() {
             Sign in with Google
           </Button>
         </Stack>
+        <Stack pt={6}>
+              <Text align={'center'}>
+                Already a user? <Link to="/login"><span style={{color : "blue"}}>Login</span></Link>
+              </Text>
+            </Stack>
       </Stack>
     </Flex>
     </>
