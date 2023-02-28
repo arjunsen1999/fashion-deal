@@ -6,7 +6,13 @@ import TopNavbar from "./TopNavbar";
 export default function Navbar() {
   return (
     <>
-      <Box w="100%" bg="rgb(245, 245, 245)" position={"sticky"} top="0px">
+      <Box
+        w="100%"
+        bg="rgb(245, 245, 245)"
+        zIndex={"10"}
+        position={"sticky"}
+        top="0px"
+      >
         <TopNavbar />
         <BottomNavbar />
       </Box>
