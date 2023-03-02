@@ -11,7 +11,12 @@ export default function HomeCarousels() {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
+        pauseOnHover: true,
         initialSlide: 0,
+        autoplay: true,
+        speed: 10000,
+        autoplaySpeed: 2000,
+        cssEase: "ease-in",
         responsive: [
           {
             breakpoint: 1024,

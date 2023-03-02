@@ -15,7 +15,7 @@ import { BsArrowUpRight, BsHeartFill, BsHeart } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
 
-function Rating({ rating, numReviews }: RatingProps) {
+function Rating({ rating, numReviews }) {
   return (
     <Box display={"flex"}  alignItems="center">
       {Array(5)
