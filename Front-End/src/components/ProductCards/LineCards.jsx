@@ -52,7 +52,7 @@ export default function LineCards({ rating, numReviews }) {
           w="xs"
           rounded={"sm"}
           //   my={5}
-          //   mx={[0, 5]}
+            mx={5}
           overflow={"hidden"}
           bg="white"
           border={"1px"}
