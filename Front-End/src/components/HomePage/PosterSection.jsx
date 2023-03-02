@@ -4,7 +4,7 @@ import React from "react";
 export default function PosterSection() {
   return (
     <>
-      <Box border="1px solid black" h="250px">
+      <Box  h="250px">
         <Grid
           h="100%"
           templateRows="repeat(2, 1fr)"
