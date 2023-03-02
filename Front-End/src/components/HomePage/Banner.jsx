@@ -30,8 +30,8 @@ const settings = {
 
 export default function Banner() {
   const [slider, setSlider] = useState(null);
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
-  const side = useBreakpointValue({ base: "30%", md: "40px" });
+  const top = useBreakpointValue({ base: "50%", md: "50%" });
+  const side = useBreakpointValue({ base: "40px", md: "40px" });
   const cards = [
     {
       title: "Design Projects 1",

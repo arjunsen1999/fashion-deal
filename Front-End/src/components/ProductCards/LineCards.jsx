@@ -49,10 +49,10 @@ export default function LineCards({ rating, numReviews }) {
     <>
       <Center>
         <Box
-          w="xs"
+          // w="xs"
           rounded={"sm"}
           //   my={5}
-            mx={5}
+            mx={2}
           overflow={"hidden"}
           bg="white"
           border={"1px"}
