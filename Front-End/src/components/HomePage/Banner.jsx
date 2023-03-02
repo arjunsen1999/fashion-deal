@@ -54,7 +54,7 @@ export default function Banner() {
   ];
   return (
     <>
-      <Box h="350px" borderRadius={"30px"} mb="30px" position={"relative"}>
+      <Box h="350px" borderRadius={"30px"} mb="50px" position={"relative"}>
         <IconButton
           aria-label="left-arrow"
           variant="ghost"
