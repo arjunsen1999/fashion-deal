@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT;
 const cors = require('cors');
 const path = require('path');
+const cookieParser = require('cookie-parser')
 const {accessControl} = require("./Middleware/accessControl/AccessControll")
 
 let staticPath = path.join(__dirname, "/View");
@@ -19,6 +20,7 @@ const {authRouter} = require("./Routes/Auth.route");
 app.use(accessControl);
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser())
 // app.use(express.static(staticPath));
 app.set('view engine', 'hbs');
 
@@ -28,7 +30,9 @@ app.set('view engine', 'hbs');
 
 app.get("/", (req, res) =>{
     res.send("<h1>Hello from the other side</h1>")
-})
+});
+
+
 
 // All Routes
     // Authentication
