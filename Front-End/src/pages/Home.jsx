@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import React from "react";
 import Footer from "../components/Footer/Footer";
 import Banner from "../components/HomePage/Banner";
+import CategorySection from "../components/HomePage/CategorySection";
 import HomeBox from "../components/HomePage/HomeBox";
 import HomeCarousels from "../components/HomePage/HomeCarousels";
 import PosterSection from "../components/HomePage/PosterSection";
@@ -24,6 +25,26 @@ export default function Home() {
             <PosterSection />
             <PosterSection />
             <PosterSection />
+          </Box>
+          <Box display={"grid"} gridTemplateColumns={{ base : "1fr 1fr", sm : "repeat(3, 1fr)", md : "repeat(4, 1fr)", lg : "repeat(6, 1fr)"}} gap={"30px"} mb="50px">
+          
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+              <CategorySection />
+         
           </Box>
           <Box display={"grid"} gridTemplateColumns={{base : "1fr", sm : "repeat(2, 1fr)", md : "repeat(3, 1fr)", lg :"repeat(5, 1fr)"}} gap={"30px"}>
             <VideoSection />
