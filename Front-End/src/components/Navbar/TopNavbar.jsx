@@ -1,4 +1,5 @@
 import {
+  Badge,
   Box,
   Button,
   Heading,
@@ -196,7 +197,8 @@ export default function TopNavbar() {
                 alignItems="center"
                 justifyContent={"center"}
               >
-                <Box>
+                <Box position={"relative"} >
+                <Badge  colorScheme='white' position={"absolute"} bg="red" borderRadius={"50%"} color="white" top="-5px" left="15px" border={"1px solid white"}>99+</Badge>
                   <BsCart3 fontSize={"20px"} />
                 </Box>
                 <Text fontSize={"18px"} fontWeight="460">

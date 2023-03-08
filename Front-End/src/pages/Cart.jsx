@@ -17,7 +17,8 @@ export default function Cart() {
             gridTemplateColumns={"1.8fr 1fr"}
           >
             <Box
-              borderRight={"1px solid black"}
+              // borderRight={"1px solid black"}
+              borderRightWidth = "1px"
               minH="400px"
               p={"0px 20px"}
             >

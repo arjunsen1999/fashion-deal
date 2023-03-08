@@ -7,11 +7,11 @@ import RemoveItemAlert from "./RemoveItemAlert";
 export default function CartItems() {
   return (
     <>
-      <Box w="100%" border={"0.2px solid gray"} minH="100px" mb="10px">
+      <Box w="100%" borderWidth="1px" minH="100px" mb="10px">
         <Box
           w="100%"
           p="20px"
-          borderBottom={"1px solid black"}
+          borderBottomWidth="1px"
           minH="100px"
           display={"grid"}
           gridTemplateColumns={"1fr 3fr"}
