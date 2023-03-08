@@ -198,7 +198,7 @@ export default function TopNavbar() {
                 justifyContent={"center"}
               >
                 <Box position={"relative"} >
-                <Badge  colorScheme='white' position={"absolute"} bg="red" borderRadius={"50%"} color="white" top="-5px" left="15px" border={"1px solid white"}>99+</Badge>
+                <Badge  colorScheme='white' position={"absolute"} bg="#C53030" borderRadius={"50%"} color="white" top="-5px" left="15px" border={"1px solid white"}>99+</Badge>
                   <BsCart3 fontSize={"20px"} />
                 </Box>
                 <Text fontSize={"18px"} fontWeight="460">
