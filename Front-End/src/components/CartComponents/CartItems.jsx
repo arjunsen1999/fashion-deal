@@ -1,0 +1,84 @@
+import { Box, Button, Image, Text, useDisclosure } from "@chakra-ui/react";
+import React from "react";
+import EditDrawer from "./EditDrawer";
+
+import RemoveItemAlert from "./RemoveItemAlert";
+
+export default function CartItems() {
+  return (
+    <>
+      <Box w="100%" border={"0.2px solid gray"} minH="100px" mb="10px">
+        <Box
+          w="100%"
+          p="20px"
+          borderBottom={"1px solid black"}
+          minH="100px"
+          display={"grid"}
+          gridTemplateColumns={"1fr 3fr"}
+          gap={"10px"}
+        >
+          <Box>
+            <Image
+              src="https://images.meesho.com/images/products/146519605/fsjdd_512.jpg"
+              w="100%"
+            />
+          </Box>
+          <Box>
+            <Box
+              display={"flex"}
+              alignItems={"flex-start"}
+              justifyContent={"flex-start"}
+              mb="10px"
+            >
+              <Box w="80%">
+                <Text fontWeight={"bold"} noOfLines={1} fontSize={"17px"}>
+                  Premium Polyester T-shirt (Pack of 1) hehehe
+                </Text>
+              </Box>
+              <Box
+                color={"#008060"}
+                fontSize={"18px"}
+                fontWeight={"bold"}
+                w="20%"
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"flex-end"}
+              >
+                <EditDrawer />
+              </Box>
+            </Box>
+
+            <Box
+              // border={"1px solid red"}
+              display={"flex"}
+              alignItems={"flex-start"}
+              justifyContent={"flex-start"}
+              mb="10px"
+            >
+              <Text fontSize={"20px"} mr="20px">
+                Size: M
+              </Text>
+              <Text fontSize={"20px"}>Qty: 1</Text>
+            </Box>
+            <Box mb="10px">
+              <Text fontSize={"20px"}>₹311</Text>
+            </Box>
+            <Box>
+              <RemoveItemAlert />
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          w="100%"
+          p="10px 20px"
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Text fontSize={"18px"}>Supplier : SSmyth</Text>
+          <Text fontSize={"18px"}>Free Delivery</Text>
+        </Box>
+      </Box>
+    </>
+  );
+}
