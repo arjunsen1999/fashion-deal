@@ -9,16 +9,16 @@ export default function Cart() {
     <>
       <Box w="100%" minHeight={"120vh"} display="flex" flexDirection={"column"}>
         <Navbar />
-        <Box p={{ base: "40px 20px", sm: "40px 50px" }} mb="40px">
+        <Box p={{ base: "40px 10px", sm: "40px 50px" }} mb="40px">
           <Box
-            w="70%"
+            w={{base : "100%", md : "80%", lg : "70%"}}
             m="0 auto"
             display={"grid"}
-            gridTemplateColumns={"1.8fr 1fr"}
+            gridTemplateColumns={{base : "1fr", md : "1.8fr 1fr"}}
           >
             <Box
-              // borderRight={"1px solid black"}
-              borderRightWidth = "1px"
+              
+              borderRightWidth = {{base : "0px", md : "1px"}}
               minH="400px"
               p={"0px 20px"}
             >
@@ -36,7 +36,7 @@ export default function Cart() {
 
             </Box>
 
-            <Box h="400px" p={"0px 20px"} position={"relative"}>
+            <Box  h={{ base : "100%", md : "400px"}} p={{base : "0px", md : "0px 20px"}} position={"relative"} mt={{base : "30px",md : "0px"}}>
               <PriceDetails />
             </Box>
           </Box>

@@ -63,7 +63,7 @@ export default function EditDrawer() {
                 p="20px"
                 minH="100px"
                 display={"grid"}
-                gridTemplateColumns={"1fr 3fr"}
+                gridTemplateColumns={{base : "1fr", sm : "1fr 3fr"}}
                 gap={"10px"}
               >
                 <Box>
@@ -88,7 +88,8 @@ export default function EditDrawer() {
 
                   <Box
                     display={"flex"}
-                    alignItems={"center"}
+                    alignItems={{base : "flex-start", md : "center"}}
+                    flexDirection={{base : "column-reverse",md : "row"}}
                     justifyContent={"space-between"}
                     mb="10px"
                 
@@ -97,6 +98,7 @@ export default function EditDrawer() {
                       display={"flex"}
                       alignItems={"center"}
                       justifyContent={"space-between"}
+                 
                     >
                       <Text fontSize={"20px"} mr="20px">
                         Size:
@@ -107,7 +109,7 @@ export default function EditDrawer() {
                         <option value="option3">lg</option>
                       </Select>
                     </Box>
-                    <Box display={"flex"} alignItems={"center"} justifyContent={"flex-end"}>
+                    <Box      mb={{base : "20px",md : "0px"}} display={"flex"} alignItems={"center"} justifyContent={"flex-end"}>
                     <Text fontSize={"20px"} mr="15px">Qty:</Text>
                     <Box borderWidth="1px">
                         <Button borderRadius={"0px"}><AddIcon /></Button>

@@ -4,7 +4,7 @@ import { Box, Button, Text } from "@chakra-ui/react";
 export default function PriceDetails() {
   return (
     <>
-        <Box  w="270px" position={"fixed"}>
+        <Box  w={{base : "100%", md : "270px"}} position={{base : "absolute", md : "fixed"}} >
             <Text fontSize={"22px"} color={"#333333"} fontWeight={"bolder"} mb="20px">Price Details</Text>
             <Box borderBottom={"1px solid black"}>
              <Box display={"flex"} alignItems={"center"} mb="15px" justifyContent={"space-between"}>
