@@ -8,7 +8,7 @@ export default function BottomNavbar() {
   const sm = "320px";
   return (
     <>
-      <Box borderBottom={"0.2px solid gray"} px="40px" display={{base : "none", xl : "block"}}>
+      <Box borderBottom={"0.2px solid gray"} color={"white"} px="40px" display={{base : "none", xl : "block"}}>
         <Box
           h="100%"
           display={"flex"}
@@ -21,7 +21,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Women Ethnic</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-              <Box className={Style.bottomSectionMenu}>
+              <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"}  alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     WomenEthnic.map((ele) =>(
@@ -46,7 +46,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Women Western</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     WomenWestern.map((ele) =>(
@@ -71,7 +71,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Men</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     Men.map((ele) =>(
@@ -96,7 +96,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Kids</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     Kids.map((ele) =>(
@@ -121,7 +121,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Home & Kitchen</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     HomeKitchen.map((ele) =>(
@@ -146,7 +146,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Beauty & Health</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     BeautyHealth.map((ele) =>(
@@ -171,7 +171,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Jewellery & Accessories</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     JewelleryAccessories.map((ele) =>(
@@ -196,7 +196,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Bags & Footwear</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     BagsFootwear.map((ele) =>(
@@ -221,7 +221,7 @@ export default function BottomNavbar() {
               <Text fontSize={"19px"}>Electronics</Text>
             </NavLink>
             {/* /////////////////////////////////// */}
-            <Box className={Style.bottomSectionMenu}>
+            <Box className={Style.bottomSectionMenu} color={"black"}>
                 <Box display={"flex"} alignItems="flex-start" justifyContent={"flex-start"} className={Style.dropMenuSection}>
                   {
                     Electronics.map((ele) =>(
