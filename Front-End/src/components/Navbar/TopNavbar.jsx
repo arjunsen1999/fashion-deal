@@ -19,7 +19,7 @@ import { GoLock } from "react-icons/go";
 
 export default function TopNavbar() {
   return (
-    <Box px={{ md: "40px", base: "10px" }} borderBottom={"0.2px solid gray"}>
+    <Box px={{ md: "40px", base: "10px" }} borderBottom={"0.2px solid white"} color={"white"}>
       <Box
         w="100%"
         minH="50px"
@@ -54,7 +54,7 @@ export default function TopNavbar() {
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
-                  children={<BiSearchAlt color="gray.300" fontSize={"20px"} />}
+                  children={<BiSearchAlt color="#002E25" fontSize={"20px"} />}
                 />
                 <Input
                   type="text"
@@ -62,6 +62,7 @@ export default function TopNavbar() {
                   bg={"white"}
                   focusBorderColor="#008060"
                   fontSize={"20px"}
+                  color={"black"}
                 />
               </InputGroup>
             </Box>
@@ -76,7 +77,7 @@ export default function TopNavbar() {
         >
           <Box
             px="20px"
-            borderRight={"0.3px solid gray"}
+            borderRight={"0.3px solid white"}
             display={{ xl: "block", base: "none" }}
           >
             <Box
@@ -94,7 +95,7 @@ export default function TopNavbar() {
                 Download App
               </Text>
               {/* //////////////// */}
-              <Box className={Style.downloadAppInnerMenu}>
+              <Box className={Style.downloadAppInnerMenu} color={"black"}>
                 <Heading fontSize={"18px"} mb="20px">
                   Download From a
                 </Heading>
@@ -114,7 +115,7 @@ export default function TopNavbar() {
           </Box>
           <Box
             px="20px"
-            borderRight={"0.3px solid gray"}
+            borderRight={"0.3px solid white"}
             display={{ lg: "block", base: "none" }}
           >
             <Box
@@ -154,7 +155,7 @@ export default function TopNavbar() {
                   Profile
                 </Text>
                 {/* /////////////////// */}
-                <Box className={Style.profileMenu} w={{base : "200px", md : "110%"}}>
+                <Box className={Style.profileMenu} color={"black"} w={{base : "200px", md : "110%"}}>
                   <Heading fontSize={"20px"} mb="8px">
                     Hello User
                   </Heading>
@@ -165,7 +166,7 @@ export default function TopNavbar() {
                     {" "}
                     <Button
                       mb="20px"
-                      bg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
+                      bg="#008060"
                       color={"white"}
                       size="lg"
                       w="100%"

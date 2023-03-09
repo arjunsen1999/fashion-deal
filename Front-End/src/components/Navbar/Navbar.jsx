@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <Box
         w="100%"
-        bg="rgb(245, 245, 245)"
+        bg="#008060"
         zIndex={"10"}
         position={"sticky"}
         top="0px"

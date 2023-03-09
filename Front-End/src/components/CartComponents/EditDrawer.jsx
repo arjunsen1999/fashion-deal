@@ -135,8 +135,9 @@ export default function EditDrawer() {
               w="100%"
               color={"white"}
               bg={
-                "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
+                "#008060"
               }
+              h="45px"
               py="20px"
             >
               Continue
