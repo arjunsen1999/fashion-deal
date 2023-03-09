@@ -8,7 +8,7 @@ export default function BottomNavbar() {
   const sm = "320px";
   return (
     <>
-      <Box borderBottom={"0.2px solid gray"} color={"white"} px="40px" display={{base : "none", xl : "block"}}>
+      <Box borderBottomWidth={"1px"}  px="40px" display={{base : "none", xl : "block"}}>
         <Box
           h="100%"
           display={"flex"}

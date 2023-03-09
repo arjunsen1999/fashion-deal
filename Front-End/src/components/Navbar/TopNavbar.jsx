@@ -19,7 +19,7 @@ import { GoLock } from "react-icons/go";
 
 export default function TopNavbar() {
   return (
-    <Box px={{ md: "40px", base: "10px" }} borderBottom={"0.2px solid white"} color={"white"}>
+    <Box px={{ md: "40px", base: "10px" }} borderBottomWidth={"1px"}>
       <Box
         w="100%"
         minH="50px"
@@ -77,7 +77,7 @@ export default function TopNavbar() {
         >
           <Box
             px="20px"
-            borderRight={"0.3px solid white"}
+            borderRightWidth={"1px"}
             display={{ xl: "block", base: "none" }}
           >
             <Box
@@ -115,7 +115,7 @@ export default function TopNavbar() {
           </Box>
           <Box
             px="20px"
-            borderRight={"0.3px solid white"}
+            borderRightWidth={"1px"}
             display={{ lg: "block", base: "none" }}
           >
             <Box
@@ -179,7 +179,7 @@ export default function TopNavbar() {
                     display={"flex"}
                     alignItems="center"
                     justifyContent={"flex-start"}
-                    borderTop=".2px solid gray"
+                    borderTopWidth="1px"
                   >
                     <Box mr="20px">
                       <GoLock fontSize={"18px"} />
