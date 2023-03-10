@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 
 export default function SingleProduct() {
+
   return (
     <>
       <Box w="100%" minHeight={"120vh"} display="flex" flexDirection={"column"}>

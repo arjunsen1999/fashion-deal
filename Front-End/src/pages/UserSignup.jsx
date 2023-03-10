@@ -5,6 +5,7 @@ import { HiChevronLeft } from "react-icons/hi";
 import SignupCards from "../components/UserSignup/SignupCards";
 
 export default function UserSignup() {
+ 
   return (
     <>
       <Box w="100%" minHeight={"100vh"} display="flex" flexDirection={"column"}>
