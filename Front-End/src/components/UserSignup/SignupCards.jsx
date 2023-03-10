@@ -26,7 +26,12 @@ export default function SignupCards() {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <>
-      <Flex minH={"100vh"} align={"center"} justify={"center"}>
+      <Flex
+        minH={"100vh"}
+        align={"flex-start"}
+        justify={"center"}
+        
+      >
         <Stack spacing={4} w={"full"} maxW={"md"} rounded={"xl"} p={6} my={12}>
           <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
             Sign Up
@@ -116,7 +121,7 @@ export default function SignupCards() {
           <Stack pt={6}>
             <Text align={"center"} color="#A0AEC0">
               Already a user?{" "}
-              <Link to="/login" >
+              <Link to="/login">
                 <span style={{ color: "blue" }}>Login</span>
               </Link>
             </Text>
