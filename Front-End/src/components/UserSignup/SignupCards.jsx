@@ -40,7 +40,6 @@ export default function SignupCards() {
             Enter your email and password to sign Up!
           </Text>
           <FormControl id="userName">
-            {/* <FormLabel>User Icon</FormLabel> */}
             <Stack direction={["column", "row"]} spacing={6}>
               <Center>
                 <Avatar size="xl" src="https://bit.ly/broken-link">
@@ -57,7 +56,6 @@ export default function SignupCards() {
               </Center>
               <Input type="file" id="file" display={"none"}/>
               <Center w="full">
-              {/* <label style={{cursor : "pointer"}} htmlFor="file">Change Icon</label> */}
               <FormLabel _hover={{bg : "#E2E8F0"}} htmlFor="file" h="45px" w="240px" display={"flex"} alignItems={"center"} justifyContent={"center"} bg="#F7FAFC" cursor={"pointer"} borderRadius={"8px"}>Change Icon</FormLabel>
               </Center>
             </Stack>
