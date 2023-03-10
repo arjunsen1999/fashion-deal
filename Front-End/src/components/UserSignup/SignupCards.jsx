@@ -57,7 +57,7 @@ export default function SignupCards() {
               </Center>
               <Input type="file" id="file" display={"none"}/>
               <Center w="full">
-                <Button w="full"><label style={{cursor : "pointer"}} for="file">Change Icon</label></Button>
+                <Button w="full"><label style={{cursor : "pointer"}} htmlFor="file">Change Icon</label></Button>
               </Center>
             </Stack>
           </FormControl>
