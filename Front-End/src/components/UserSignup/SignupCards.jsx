@@ -32,7 +32,7 @@ export default function SignupCards() {
         justify={"center"}
         
       >
-        <Stack spacing={4} w={"full"} maxW={"md"} rounded={"xl"} p={6} my={12}>
+        <Stack spacing={4} w={"full"} maxW={"md"} rounded={"xl"} p={6} my={2}>
           <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
             Sign Up
           </Heading>
@@ -55,8 +55,9 @@ export default function SignupCards() {
                   />
                 </Avatar>
               </Center>
+              <Input type="file" id="file" display={"none"}/>
               <Center w="full">
-                <Button w="full">Change Icon</Button>
+                <Button w="full"><label style={{cursor : "pointer"}} for="file">Change Icon</label></Button>
               </Center>
             </Stack>
           </FormControl>

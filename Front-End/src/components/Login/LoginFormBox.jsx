@@ -29,7 +29,7 @@ export default function LoginFormBox() {
     <>
      <Flex
       minH={'100vh'}
-      align={'center'}
+      align={'flex-start'}
       justify={'center'}
   >
       <Stack
