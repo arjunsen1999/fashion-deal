@@ -29,7 +29,7 @@ export default function LoginFormBox() {
     <>
      <Flex
       minH={'100vh'}
-      align={'center'}
+      align={'flex-start'}
       justify={'center'}
   >
       <Stack
@@ -38,7 +38,7 @@ export default function LoginFormBox() {
         maxW={'md'}
         rounded={'xl'}
         p={6}
-        my={12}>
+        my={2}>
         <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }} >
           Sign In
         </Heading>
