@@ -10,17 +10,12 @@ import {
     Box,
     Button,
     CloseButton,
-    Image,
-    Select,
     Text,
     useDisclosure,
   } from "@chakra-ui/react";
   import { FiPhone } from 'react-icons/fi';
   import {
     FormControl,
-    FormLabel,
-    FormErrorMessage,
-    FormHelperText,
   } from '@chakra-ui/react'
   import {HiOutlineLocationMarker} from "react-icons/hi"
 

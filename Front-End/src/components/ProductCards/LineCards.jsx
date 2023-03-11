@@ -11,7 +11,7 @@ import {
   HStack,
   Stack,
 } from "@chakra-ui/react";
-import { BsArrowUpRight, BsHeartFill, BsHeart } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs";
 

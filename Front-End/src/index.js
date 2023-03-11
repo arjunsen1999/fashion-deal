@@ -7,14 +7,18 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import {Provider} from "react-redux"
+import {store} from "./Redux/Store"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
+      <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      </Provider>
     </ChakraProvider>
   </React.StrictMode>
 );

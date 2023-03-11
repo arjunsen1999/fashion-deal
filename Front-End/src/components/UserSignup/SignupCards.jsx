@@ -7,7 +7,6 @@ import {
   Heading,
   Input,
   Stack,
-  useColorModeValue,
   HStack,
   Avatar,
   AvatarBadge,
