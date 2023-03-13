@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Flex,
@@ -21,14 +21,18 @@ import { SmallCloseIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { userSignup } from "../../Redux/Auth/UserSignUp/Auth.action";
+import { user_signup_reset } from "../../Redux/Auth/UserSignUp/Auth.actionType";
 import axios from "axios";
+import { useToast } from "@chakra-ui/react";
 
 export default function SignupCards() {
-  const { User_isLoading } = useSelector((state) => state.userSignUp);
+  const { User_isLoading, isError, isSuccess, message } = useSelector((state) => state.userSignUp);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
   const [profile, setProfile] = useState("");
   const [Ploading, setPLoading] = useState(false);
+  const toast = useToast();
 
   const [FormInput, setFormInput] = useState({
     fname: "",
@@ -66,8 +70,34 @@ export default function SignupCards() {
   const handleSubmit = (event) => {
     event.preventDefault();
     FormInput.img = profile;
-    console.log(FormInput);
+    dispatch(userSignup(FormInput))
   };
+
+  useEffect(() =>{
+     // For Error
+     if(isError){
+      toast({
+        title: `Error`,
+        position: "top",
+        isClosable: true,
+        status: "error",
+        description : message
+      })
+     }
+
+     // For Success
+     if(isSuccess){
+      toast({
+        title: `Success`,
+        position: "top",
+        isClosable: true,
+        status: "success",
+        description : message
+      })
+     }
+
+     dispatch({type : user_signup_reset});
+  }, [isError, isSuccess])
 
   return (
     <>
@@ -200,14 +230,31 @@ export default function SignupCards() {
             </InputGroup>
           </FormControl>
           <Stack spacing={6} direction={["column", "row"]}>
-            <Button
+            {
+              User_isLoading? <Button
+              isLoading
               bg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
               color={"white"}
+              _hover = {{
+                color : "white"
+              }}
+              w="full"
+              loadingText='Sign Up'
+            
+            >
+              Sign Up
+            </Button> : <Button
+              bg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
+              color={"white"}
+              _hover = {{
+                color : "white"
+              }}
               w="full"
               onClick={handleSubmit}
             >
               Sign Up
             </Button>
+            }
           </Stack>
           <Stack spacing={6} direction={["column", "row"]}>
             <Button w="full">
