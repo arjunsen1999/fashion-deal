@@ -20,17 +20,58 @@ import {
 import { SmallCloseIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 export default function SignupCards() {
+  const { User_isLoading } = useSelector((state) => state.userSignUp);
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+  const [profile, setProfile] = useState("");
+  const [Ploading, setPLoading] = useState(false);
+
+  const [FormInput, setFormInput] = useState({
+    fname: "",
+    lname: "",
+    password: "",
+    email: "",
+  });
+
+  const addProfile = async (event) => {
+    setPLoading(true);
+    let image = event.target.files[0];
+    console.log();
+    const dataImg = new FormData();
+    dataImg.append("file", image);
+    dataImg.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESET);
+    dataImg.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
+    let { data } = await axios.post(
+      `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
+      dataImg
+    );
+    setProfile(data.url);
+    setPLoading(false);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormInput((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    FormInput.img = profile;
+    console.log(FormInput);
+  };
+
   return (
     <>
-      <Flex
-        minH={"100vh"}
-        align={"flex-start"}
-        justify={"center"}
-        
-      >
+      <Flex minH={"100vh"} align={"flex-start"} justify={"center"}>
         <Stack spacing={4} w={"full"} maxW={"md"} rounded={"xl"} p={6} my={2}>
           <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
             Sign Up
@@ -41,7 +82,10 @@ export default function SignupCards() {
           <FormControl id="userName">
             <Stack direction={["column", "row"]} spacing={6}>
               <Center>
-                <Avatar size="xl" src="https://bit.ly/broken-link">
+                <Avatar
+                  size="xl"
+                  src={profile ? profile : "https://bit.ly/broken-link"}
+                >
                   <AvatarBadge
                     as={IconButton}
                     size="sm"
@@ -50,12 +94,45 @@ export default function SignupCards() {
                     colorScheme="red"
                     aria-label="remove Image"
                     icon={<SmallCloseIcon />}
+                    onClick={() => setProfile("")}
                   />
                 </Avatar>
               </Center>
-              <Input type="file" id="file" display={"none"}/>
+              <Input
+                type="file"
+                id="file"
+                display={"none"}
+                onChange={addProfile}
+              />
               <Center w="full">
-              <FormLabel _hover={{bg : "#E2E8F0"}} htmlFor="file" h="45px" w="240px" display={"flex"} alignItems={"center"} justifyContent={"center"} bg="#F7FAFC" cursor={"pointer"} borderRadius={"8px"}>Change Icon</FormLabel>
+                {Ploading ? (
+                  <Button
+                    isLoading
+                    loadingText="Change Icon"
+                    colorScheme="teal"
+                    variant="outline"
+                    border={"none"}
+                    h="45px"
+                    w="240px"
+                  >
+                    Change Icon
+                  </Button>
+                ) : (
+                  <FormLabel
+                    _hover={{ bg: "#E2E8F0" }}
+                    htmlFor="file"
+                    h="45px"
+                    w="240px"
+                    display={"flex"}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                    bg="#F7FAFC"
+                    cursor={"pointer"}
+                    borderRadius={"8px"}
+                  >
+                    Change Icon
+                  </FormLabel>
+                )}
               </Center>
             </Stack>
           </FormControl>
@@ -63,13 +140,27 @@ export default function SignupCards() {
             <Box>
               <FormControl id="firstName" isRequired>
                 <FormLabel>First Name</FormLabel>
-                <Input type="text" placeholder="First Name" />
+                <Input
+                  type="text"
+                  name="fname"
+                  value={FormInput.fname}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                  required
+                />
               </FormControl>
             </Box>
             <Box>
               <FormControl id="lastName">
                 <FormLabel>Last Name</FormLabel>
-                <Input type="text" placeholder="Last Name" />
+                <Input
+                  type="text"
+                  name="lname"
+                  value={FormInput.lname}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                  required
+                />
               </FormControl>
             </Box>
           </HStack>
@@ -79,6 +170,10 @@ export default function SignupCards() {
               placeholder="fashion-deal@example.com"
               _placeholder={{ color: "gray.500" }}
               type="email"
+              name="email"
+              value={FormInput.email}
+              onChange={handleChange}
+              required
             />
           </FormControl>
           <FormControl id="password" isRequired>
@@ -87,6 +182,10 @@ export default function SignupCards() {
               <Input
                 type={showPassword ? "text" : "password"}
                 placeholder={"Password"}
+                name="password"
+                value={FormInput.password}
+                onChange={handleChange}
+                required
               />
               <InputRightElement h={"full"}>
                 <Button
@@ -105,6 +204,7 @@ export default function SignupCards() {
               bg="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,43,209,1) 98%, rgba(72,11,228,1) 100%)"
               color={"white"}
               w="full"
+              onClick={handleSubmit}
             >
               Sign Up
             </Button>
